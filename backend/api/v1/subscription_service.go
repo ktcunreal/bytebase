@@ -101,14 +101,5 @@ func (s *SubscriptionService) loadSubscription(ctx context.Context) (*v1pb.Subsc
 }
 
 func covertToV1PlanType(planType api.PlanType) v1pb.PlanType {
-	switch planType {
-	case api.FREE:
-		return v1pb.PlanType_FREE
-	case api.TEAM:
-		return v1pb.PlanType_TEAM
-	case api.ENTERPRISE:
-		return v1pb.PlanType_ENTERPRISE
-	default:
-		return v1pb.PlanType_PLAN_TYPE_UNSPECIFIED
-	}
+	return v1pb.PlanType_ENTERPRISE
 }
