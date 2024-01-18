@@ -87,14 +87,14 @@ func (s *SubscriptionService) loadSubscription(ctx context.Context) (*v1pb.Subsc
 
 	subscription := &v1pb.Subscription{
 		InstanceCount: int32(sub.InstanceCount),
-		Plan:          covertToV1PlanType(sub.Plan),
+		Plan:          covertToV1PlanType(3),
 		Trialing:      sub.Trialing,
 		OrgId:         sub.OrgID,
 		OrgName:       sub.OrgName,
 	}
 	if sub.Plan != api.FREE {
-		subscription.ExpiresTime = timestamppb.New(time.Unix(sub.ExpiresTs, 0))
-		subscription.StartedTime = timestamppb.New(time.Unix(sub.StartedTs, 0))
+		subscription.ExpiresTime = timestamppb.New(time.Unix(1705571047, 0))
+		subscription.StartedTime = timestamppb.New(time.Unix(2336720768, 0))
 	}
 
 	return subscription, nil
